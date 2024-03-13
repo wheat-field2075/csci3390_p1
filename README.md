@@ -1,5 +1,5 @@
 # CSCI3390 Project 1
-###Authors: Michael Lin and Matt Smallhouse
+Authors: Michael Lin and Matt Smallhouse
 
 ## Part (a)
 k = 2
@@ -43,8 +43,11 @@ k = 7
 
 ## Part (c)
 To constrain the value of the nonce, we can change the line:
+
   `iter.map(x => rand.nextInt(Int.MaxValue - 1) + 1)`
+
 to:
+
   `iter.map(x => rand.nextInt(difficulty - 1) + 1)`
 
 This will not be more efficient than the randomized algorithm since the odds of having a generated nonce will work is [n / (16)^n], which approaches 0 as n increases. Therefore, even though the program will execute significantly faster, it's almost guranteed to be wrong.
